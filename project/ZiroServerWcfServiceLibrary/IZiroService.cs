@@ -15,17 +15,10 @@ namespace ZiroServerWcfServiceLibrary
         int GetDefaultOptions();
 
         [OperationContract]
-        void PushCurrentCpuUsage();
+        void PushCurrentCpuUsage(int idAgent, float cpuUsage);
 
         [OperationContract]
-        void PushCurrentFreeMemory();
-
-        [OperationContract]
-        float GetCurrentCpuUsage();
-
-        [OperationContract]
-        float GetCurrentFreeMemory();
-
+        void PushCurrentFreeMemory(int idAgent, float freeMemory);
         // TODO: Добавьте здесь операции служб
     }
 

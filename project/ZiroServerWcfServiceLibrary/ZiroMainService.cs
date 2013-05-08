@@ -12,38 +12,28 @@ namespace ZiroServerWcfServiceLibrary
     public class ZiroMainService : IZiroService
     {
 
-        private float currentCpuUsage;
-        private float currentFreeMemory;
+        public float currentCpuUsage { get; set; }
+        public float currentFreeMemory { get; set; }
 
 
-        //дефолтные настройки для клиента
+        /// <summary>
+        /// ЗАГЛУШКА
+        /// </summary>
+        /// <returns></returns>
         public int GetDefaultOptions()
         {
             throw new NotImplementedException();
         }
 
-        //КЛИЕНТ:
-        public void PushCurrentCpuUsage()
+        
+        public void PushCurrentCpuUsage(int idAgent, float cpuUsage)
         {
-            throw new NotImplementedException();
+            this.currentCpuUsage = cpuUsage;
         }
 
-        //КЛИЕНТ:
-        public void PushCurrentFreeMemory()
+        public void PushCurrentFreeMemory(int idAgent, float freeMemory)
         {
-            throw new NotImplementedException();
-        }
-
-        //СЕРВЕР:
-        public float GetCurrentCpuUsage()
-        {
-            throw new NotImplementedException();
-        }
-
-        //СЕРВЕР:
-        public float GetCurrentFreeMemory()
-        {
-            throw new NotImplementedException();
+            this.currentFreeMemory = freeMemory;
         }
     }
 }
