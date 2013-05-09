@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://widwards.cloudapp.net" elementFormDefault="qualified" targetNamespace="http://widwards.cloudapp.net" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="GetDefaultOptions">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDefaultOptionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDefaultOptionsResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idAgent" type="xs:int" />
+        <xs:element minOccurs="0" name="cpuUsage" type="xs:float" />
+        <xs:element minOccurs="0" name="freeMemory" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PushCurrentCpuUsage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idAgent" type="xs:int" />
+        <xs:element minOccurs="0" name="cpuUsage" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PushCurrentCpuUsageResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PushCurrentFreeMemory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idAgent" type="xs:int" />
+        <xs:element minOccurs="0" name="freeMemory" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PushCurrentFreeMemoryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

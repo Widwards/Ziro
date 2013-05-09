@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="796c4787-3b3b-489b-ab99-c2b50cbb0933" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8081/ZiroMainService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ZiroMainService.disco" MetadataType="Disco" ID="96256fd3-623a-4f8c-9e53-ca4c6d52b88c" SourceId="1" SourceUrl="http://localhost:8081/ZiroMainService?disco" />
+    <MetadataFile FileName="ZiroMainService.xsd" MetadataType="Schema" ID="f37ac080-00de-4ea2-93fb-1d6f272efdc3" SourceId="1" SourceUrl="http://localhost:8081/ZiroMainService?xsd=xsd0" />
+    <MetadataFile FileName="ZiroMainService.wsdl" MetadataType="Wsdl" ID="e4821192-d6bb-472a-aa98-6e7e5847cc18" SourceId="1" SourceUrl="http://localhost:8081/ZiroMainService?wsdl" />
+    <MetadataFile FileName="ZiroMainService1.wsdl" MetadataType="Wsdl" ID="c244c266-331a-497e-be16-7a8809ec6221" SourceId="1" SourceUrl="http://localhost:8081/ZiroMainService?wsdl=wsdl0" />
+    <MetadataFile FileName="ZiroMainService1.xsd" MetadataType="Schema" ID="0c5e2ee3-24fc-4f3c-b718-c398ddb5da9d" SourceId="1" SourceUrl="http://localhost:8081/ZiroMainService?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

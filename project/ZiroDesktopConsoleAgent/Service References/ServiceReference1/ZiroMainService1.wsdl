@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://widwards.cloudapp.net" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://widwards.cloudapp.net" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://widwards.cloudapp.net/Imports">
+      <xsd:import schemaLocation="http://localhost:8081/ZiroMainService?xsd=xsd0" namespace="http://widwards.cloudapp.net" />
+      <xsd:import schemaLocation="http://localhost:8081/ZiroMainService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IZiroService_GetDefaultOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDefaultOptions" />
+  </wsdl:message>
+  <wsdl:message name="IZiroService_GetDefaultOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDefaultOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZiroService_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="IZiroService_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZiroService_PushCurrentCpuUsage_InputMessage">
+    <wsdl:part name="parameters" element="tns:PushCurrentCpuUsage" />
+  </wsdl:message>
+  <wsdl:message name="IZiroService_PushCurrentCpuUsage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PushCurrentCpuUsageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZiroService_PushCurrentFreeMemory_InputMessage">
+    <wsdl:part name="parameters" element="tns:PushCurrentFreeMemory" />
+  </wsdl:message>
+  <wsdl:message name="IZiroService_PushCurrentFreeMemory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PushCurrentFreeMemoryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IZiroService">
+    <wsdl:operation name="GetDefaultOptions">
+      <wsdl:input wsaw:Action="http://widwards.cloudapp.net/IZiroService/GetDefaultOptions" message="tns:IZiroService_GetDefaultOptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://widwards.cloudapp.net/IZiroService/GetDefaultOptionsResponse" message="tns:IZiroService_GetDefaultOptions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input wsaw:Action="http://widwards.cloudapp.net/IZiroService/Update" message="tns:IZiroService_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://widwards.cloudapp.net/IZiroService/UpdateResponse" message="tns:IZiroService_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PushCurrentCpuUsage">
+      <wsdl:input wsaw:Action="http://widwards.cloudapp.net/IZiroService/PushCurrentCpuUsage" message="tns:IZiroService_PushCurrentCpuUsage_InputMessage" />
+      <wsdl:output wsaw:Action="http://widwards.cloudapp.net/IZiroService/PushCurrentCpuUsageResponse" message="tns:IZiroService_PushCurrentCpuUsage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PushCurrentFreeMemory">
+      <wsdl:input wsaw:Action="http://widwards.cloudapp.net/IZiroService/PushCurrentFreeMemory" message="tns:IZiroService_PushCurrentFreeMemory_InputMessage" />
+      <wsdl:output wsaw:Action="http://widwards.cloudapp.net/IZiroService/PushCurrentFreeMemoryResponse" message="tns:IZiroService_PushCurrentFreeMemory_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
