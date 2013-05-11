@@ -52,4 +52,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdateConsole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idAgent" type="xs:int" />
+        <xs:element minOccurs="0" name="cpuUsage" type="xs:float" />
+        <xs:element minOccurs="0" name="freeMemory" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateConsoleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

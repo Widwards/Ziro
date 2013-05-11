@@ -40,6 +40,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UpdateConsole">
+      <soap:operation soapAction="http://widwards.cloudapp.net/IZiroService/UpdateConsole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="ZiroMainService">
     <wsdl:port name="BasicHttpBinding_IZiroService" binding="tns:BasicHttpBinding_IZiroService">

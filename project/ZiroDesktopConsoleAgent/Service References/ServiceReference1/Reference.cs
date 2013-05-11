@@ -38,6 +38,12 @@ namespace ZiroDesktopConsoleAgent.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://widwards.cloudapp.net/IZiroService/PushCurrentFreeMemory", ReplyAction="http://widwards.cloudapp.net/IZiroService/PushCurrentFreeMemoryResponse")]
         System.Threading.Tasks.Task PushCurrentFreeMemoryAsync(int idAgent, float freeMemory);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://widwards.cloudapp.net/IZiroService/UpdateConsole", ReplyAction="http://widwards.cloudapp.net/IZiroService/UpdateConsoleResponse")]
+        void UpdateConsole(int idAgent, float cpuUsage, float freeMemory);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://widwards.cloudapp.net/IZiroService/UpdateConsole", ReplyAction="http://widwards.cloudapp.net/IZiroService/UpdateConsoleResponse")]
+        System.Threading.Tasks.Task UpdateConsoleAsync(int idAgent, float cpuUsage, float freeMemory);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -97,6 +103,14 @@ namespace ZiroDesktopConsoleAgent.ServiceReference1 {
         
         public System.Threading.Tasks.Task PushCurrentFreeMemoryAsync(int idAgent, float freeMemory) {
             return base.Channel.PushCurrentFreeMemoryAsync(idAgent, freeMemory);
+        }
+        
+        public void UpdateConsole(int idAgent, float cpuUsage, float freeMemory) {
+            base.Channel.UpdateConsole(idAgent, cpuUsage, freeMemory);
+        }
+        
+        public System.Threading.Tasks.Task UpdateConsoleAsync(int idAgent, float cpuUsage, float freeMemory) {
+            return base.Channel.UpdateConsoleAsync(idAgent, cpuUsage, freeMemory);
         }
     }
 }

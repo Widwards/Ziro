@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-
+using System.IO;
 
 namespace ZiroServerWcfServiceLibrary
 {
@@ -22,7 +22,14 @@ namespace ZiroServerWcfServiceLibrary
 
         public ZiroMainService()
         {
-            Console.WriteLine("Ziro Service created \t [OK] {0}", StackOfNode.Count);
+            //Инициализация базы при первом запуске или удалении файла базы
+            if (!File.Exists("ZiroDB.db3"))
+            {
+                Console.WriteLine("Initialize application");
+                ZiroBaseDAL dal = new ZiroBaseDAL();
+                dal.CreateBase();
+            }
+            //Console.WriteLine("Ziro Service created \t [OK] {0}", StackOfNode.Count);
         }
 
         /// <summary>
@@ -34,6 +41,19 @@ namespace ZiroServerWcfServiceLibrary
             throw new NotImplementedException();
         }
 
+        public void UpdateConsole(int idAgent, float cpuUsage, float freeMemory)
+        {
+            using (ZiroBaseDAL dal = new ZiroBaseDAL())
+            {
+                dal.OpenConnection();
+
+                dal.InsertZiroDataRecord(new ZiroAgentRecord { IdAgent = idAgent,
+                                                                    CpuUsage = cpuUsage,
+                                                                    FreeMemory = freeMemory});
+            }
+            //Console.Clear();
+            Console.WriteLine("{0}\tCPU:{1}\tMEMORY11:{2}", idAgent, cpuUsage, freeMemory);
+        }
 
         public void Update(int idAgent, float cpuUsage, float freeMemory)
         {
@@ -46,6 +66,7 @@ namespace ZiroServerWcfServiceLibrary
                     {
                         stat.Update(cpuUsage, freeMemory);
                         objectChanged = true;
+                        
                     }
                 }
             }

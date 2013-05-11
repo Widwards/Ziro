@@ -23,6 +23,9 @@ namespace ZiroServerWcfServiceLibrary
 
         [OperationContract]
         void PushCurrentFreeMemory(int idAgent, float freeMemory);
+
+        [OperationContract]
+        void UpdateConsole(int idAgent, float cpuUsage, float freeMemory);
         // TODO: Добавьте здесь операции служб
     }
 

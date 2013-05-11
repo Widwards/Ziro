@@ -30,6 +30,12 @@
   <wsdl:message name="IZiroService_PushCurrentFreeMemory_OutputMessage">
     <wsdl:part name="parameters" element="tns:PushCurrentFreeMemoryResponse" />
   </wsdl:message>
+  <wsdl:message name="IZiroService_UpdateConsole_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateConsole" />
+  </wsdl:message>
+  <wsdl:message name="IZiroService_UpdateConsole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateConsoleResponse" />
+  </wsdl:message>
   <wsdl:portType name="IZiroService">
     <wsdl:operation name="GetDefaultOptions">
       <wsdl:input wsaw:Action="http://widwards.cloudapp.net/IZiroService/GetDefaultOptions" message="tns:IZiroService_GetDefaultOptions_InputMessage" />
@@ -46,6 +52,10 @@
     <wsdl:operation name="PushCurrentFreeMemory">
       <wsdl:input wsaw:Action="http://widwards.cloudapp.net/IZiroService/PushCurrentFreeMemory" message="tns:IZiroService_PushCurrentFreeMemory_InputMessage" />
       <wsdl:output wsaw:Action="http://widwards.cloudapp.net/IZiroService/PushCurrentFreeMemoryResponse" message="tns:IZiroService_PushCurrentFreeMemory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateConsole">
+      <wsdl:input wsaw:Action="http://widwards.cloudapp.net/IZiroService/UpdateConsole" message="tns:IZiroService_UpdateConsole_InputMessage" />
+      <wsdl:output wsaw:Action="http://widwards.cloudapp.net/IZiroService/UpdateConsoleResponse" message="tns:IZiroService_UpdateConsole_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

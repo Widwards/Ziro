@@ -30,7 +30,9 @@ namespace ZiroDesktopConsoleAgent
             {
                 while (true)
                 {
-                    ziroService.Update(idAgent, agentProvider.GetCurrentCpuUsage(), agentProvider.GetCurrentFreeMemory());
+                    //ziroService.Update(idAgent, agentProvider.GetCurrentCpuUsage(), agentProvider.GetCurrentFreeMemory());
+                    ziroService.UpdateConsole(idAgent, agentProvider.GetCurrentCpuUsage(), agentProvider.GetCurrentFreeMemory());
+                    System.Threading.Thread.Sleep(5000);
                 }
             }
             
