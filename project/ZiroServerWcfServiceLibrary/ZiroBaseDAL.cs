@@ -69,9 +69,9 @@ namespace ZiroServerWcfServiceLibrary
         }
 
         //TODO:
-        public void DeleteZiroDataRecord(int agentId)
-        {
-        }
+        //public void DeleteZiroDataRecord(int agentId)
+        //{
+        //}
 
         //TODO:
         public void DeleZiroDataRecordOlderThenDate(int Date)
