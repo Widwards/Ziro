@@ -16,16 +16,19 @@ namespace ZiroServerWcfServiceLibrary
 
 
         [OperationContract]
-        void Update(int idAgent, float cpuUsage, float freeMemory);
+        void Update(int idAgent, int cpuUsage, int freeMemory);
 
         [OperationContract]
-        void PushCurrentCpuUsage(int idAgent, float cpuUsage);
+        void PushCurrentCpuUsage(int idAgent, int cpuUsage);
 
         [OperationContract]
-        void PushCurrentFreeMemory(int idAgent, float freeMemory);
+        void PushCurrentFreeMemory(int idAgent, int freeMemory);
 
         [OperationContract]
-        void UpdateConsole(int idAgent, float cpuUsage, float freeMemory);
+        void UpdateConsole(int idAgent, int cpuUsage, int freeMemory);
+
+        [OperationContract]
+        List<ZiroAgentRecord> GetLastRecords(int numbersOfRecord);
         // TODO: Добавьте здесь операции служб
     }
 

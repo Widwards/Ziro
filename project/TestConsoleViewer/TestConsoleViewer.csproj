@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3B0765DA-590F-4265-9A86-6342E5A1668D}</ProjectGuid>
+    <ProjectGuid>{79BC4089-78ED-494A-AEFB-ABFFB66E8FAE}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ZiroDesktopConsoleAgent</RootNamespace>
-    <AssemblyName>ZiroDesktopConsoleAgent</AssemblyName>
+    <RootNamespace>TestConsoleViewer</RootNamespace>
+    <AssemblyName>TestConsoleViewer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,24 +41,27 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="ZiroDesktopAgentLibrary">
-      <HintPath>..\ZiroDesktopAgentLibrary\bin\Debug\ZiroDesktopAgentLibrary.dll</HintPath>
+    <Reference Include="ZiroServerWcfServiceLibrary">
+      <HintPath>..\ZiroServerWcfServiceLibrary\bin\Debug\ZiroServerWcfServiceLibrary.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="ZiroDesktopAgent.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ServiceReference2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Service References\ServiceReference1\ZiroDesktopConsoleAgent.ServiceReference1.ZiroAgentRecord.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
+    <None Include="Properties\DataSources\ZiroServerWcfServiceLibrary.ZiroAgentRecord.datasource" />
     <None Include="Service References\ServiceReference1\ZiroMainService.wsdl" />
     <None Include="Service References\ServiceReference1\ZiroMainService.xsd">
       <SubType>Designer</SubType>
@@ -70,12 +73,24 @@
     <None Include="Service References\ServiceReference1\ZiroMainService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\ServiceReference2\ZiroMainService.wsdl" />
+    <None Include="Service References\ServiceReference2\ZiroMainService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference2\ZiroMainService1.wsdl" />
+    <None Include="Service References\ServiceReference2\ZiroMainService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference2\ZiroMainService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+    <WCFMetadataStorage Include="Service References\ServiceReference2\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServiceReference1\ZiroMainService.disco" />
@@ -88,6 +103,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference2\ZiroMainService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference2\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

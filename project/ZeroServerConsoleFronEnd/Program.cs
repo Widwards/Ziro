@@ -11,5 +11,11 @@ namespace ZeroServerConsoleFronEnd
         static void Main(string[] args)
         {
         }
+
+
+        public static void GetLastAgentRecord()
+        {
+            
+        }
     }
 }

@@ -24,29 +24,6 @@ namespace _testSQLiteClient
             //VarintConnection(baseName);
         }
 
-        private static void VarintConnection(string baseName)
-        {
-            SQLiteFactory factory = (SQLiteFactory)DbProviderFactories.GetFactory("System.Data.SQLite");
-            using (SQLiteConnection connection = (SQLiteConnection)factory.CreateConnection())
-            {
-                connection.ConnectionString = "Data Source = " + baseName;
-                connection.Open();
-
-                using (SQLiteCommand command = new SQLiteCommand(connection))
-                {
-                    command.CommandText = @"CREATE TABLE [workers] (
-                    [id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
-                    [name] char(100) NOT NULL,
-                    [family] char(100) NOT NULL,
-                    [age] int NOT NULL,
-                    [profession] char(100) NOT NULL
-                    );";
-                    command.CommandType = CommandType.Text;
-                    command.ExecuteNonQuery();
-                }
-            }
-        }
-
         private static void Connection(string baseName)
         {
             SQLiteConnection connection = new SQLiteConnection();

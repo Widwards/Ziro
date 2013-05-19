@@ -22,7 +22,6 @@ namespace ZiroServerConsoleHost
                 Console.ReadKey();
             }
 
-            Console.ReadKey();
         }
     }
 }

@@ -39,8 +39,12 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="ZiroServerWcfServiceLibrary">
+      <HintPath>..\ZiroServerWcfServiceLibrary\bin\Debug\ZiroServerWcfServiceLibrary.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PoolWorkingZiroAgents.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -41,7 +41,21 @@ namespace ZiroServerWcfServiceLibrary
             throw new NotImplementedException();
         }
 
-        public void UpdateConsole(int idAgent, float cpuUsage, float freeMemory)
+        public List<ZiroAgentRecord> GetLastRecords(int numbersOfRecord)
+        {
+            using (ZiroBaseDAL dal = new ZiroBaseDAL())
+            {
+                dal.OpenConnection();
+                return dal.GetZiroLastDataRecords(numbersOfRecord);
+            }
+            
+        }
+
+        //TODO: возвращать List<ZiroAgentRecord> моложе определенной даты:
+        // к примеру лист со всемидобавлениями в базу за последние 10 секунд
+        //public void GetNewPoolList
+
+        public void UpdateConsole(int idAgent, int cpuUsage, int freeMemory)
         {
             using (ZiroBaseDAL dal = new ZiroBaseDAL())
             {
@@ -52,34 +66,46 @@ namespace ZiroServerWcfServiceLibrary
                                                                     FreeMemory = freeMemory});
             }
             //Console.Clear();
-            Console.WriteLine("{0}\tCPU:{1}\tMEMORY11:{2}", idAgent, cpuUsage, freeMemory);
+            //Console.WriteLine("{0}\tCPU:{1}\tMEMORY11:{2}", idAgent, cpuUsage, freeMemory);
         }
 
-        public void Update(int idAgent, float cpuUsage, float freeMemory)
+        public void Update(int idAgent, int cpuUsage, int freeMemory)
         {
-            bool objectChanged = false;
-            if (StackOfNode!=null)
+            using (ZiroBaseDAL dal = new ZiroBaseDAL())
             {
-                foreach (StatObject stat in StackOfNode)
+                dal.OpenConnection();
+
+                dal.InsertZiroDataRecord(new ZiroAgentRecord
                 {
-                    if (stat.Id == idAgent)
-                    {
-                        stat.Update(cpuUsage, freeMemory);
-                        objectChanged = true;
-                        
-                    }
-                }
+                    IdAgent = idAgent,
+                    CpuUsage = cpuUsage,
+                    FreeMemory = freeMemory
+                });
             }
+            //Console.Clear();
+            //bool objectChanged = false;
+            //if (StackOfNode!=null)
+            //{
+            //    foreach (StatObject stat in StackOfNode)
+            //    {
+            //        if (stat.Id == idAgent)
+            //        {
+            //            stat.Update(cpuUsage, freeMemory);
+            //            objectChanged = true;
+                        
+            //        }
+            //    }
+            //}
             
 
-            if (!objectChanged)
-            {
-                StackOfNode.Add(new StatObject { Id = idAgent, CurrentCpuUsage = cpuUsage, CurrentFreeMemory = freeMemory});
-            }
-            Console.WriteLine("{0} updated", idAgent);
+            //if (!objectChanged)
+            //{
+            //    StackOfNode.Add(new StatObject { Id = idAgent, CurrentCpuUsage = cpuUsage, CurrentFreeMemory = freeMemory});
+            //}
+            //Console.WriteLine("{0} updated", idAgent);
         }
 
-        public void PushCurrentCpuUsage(int idAgent, float cpuUsage)
+        public void PushCurrentCpuUsage(int idAgent, int cpuUsage)
         {
             bool objectChanged = false;
             if (StackOfNode!=null)
@@ -103,7 +129,7 @@ namespace ZiroServerWcfServiceLibrary
             }
         }
 
-        public void PushCurrentFreeMemory(int idAgent, float freeMemory)
+        public void PushCurrentFreeMemory(int idAgent, int freeMemory)
         {
             bool objectChanged = false;
             if (StackOfNode!=null)

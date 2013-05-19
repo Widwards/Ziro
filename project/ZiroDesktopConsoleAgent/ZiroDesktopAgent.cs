@@ -31,11 +31,10 @@ namespace ZiroDesktopConsoleAgent
                 while (true)
                 {
                     //ziroService.Update(idAgent, agentProvider.GetCurrentCpuUsage(), agentProvider.GetCurrentFreeMemory());
-                    ziroService.UpdateConsole(idAgent, agentProvider.GetCurrentCpuUsage(), agentProvider.GetCurrentFreeMemory());
+                    ziroService.Update(idAgent, (int)agentProvider.GetCurrentCpuUsage(), (int)agentProvider.GetCurrentFreeMemory());
                     System.Threading.Thread.Sleep(5000);
                 }
             }
-            
 
             Console.ReadKey();
         }

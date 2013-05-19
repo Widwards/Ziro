@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroServerConsoleFronEnd", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_testSQLiteClient", "_testSQLiteClient\_testSQLiteClient.csproj", "{F4EC7FA6-D021-4802-ABAA-9431F35E8BB0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZiroDesktopApp", "ZiroDesktopApp\ZiroDesktopApp.csproj", "{A88B3DD8-A490-49F7-88EE-B31D6FC44995}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleViewer", "TestConsoleViewer\TestConsoleViewer.csproj", "{79BC4089-78ED-494A-AEFB-ABFFB66E8FAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,14 @@ Global
 		{F4EC7FA6-D021-4802-ABAA-9431F35E8BB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4EC7FA6-D021-4802-ABAA-9431F35E8BB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4EC7FA6-D021-4802-ABAA-9431F35E8BB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A88B3DD8-A490-49F7-88EE-B31D6FC44995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A88B3DD8-A490-49F7-88EE-B31D6FC44995}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A88B3DD8-A490-49F7-88EE-B31D6FC44995}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A88B3DD8-A490-49F7-88EE-B31D6FC44995}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79BC4089-78ED-494A-AEFB-ABFFB66E8FAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79BC4089-78ED-494A-AEFB-ABFFB66E8FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79BC4089-78ED-494A-AEFB-ABFFB66E8FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79BC4089-78ED-494A-AEFB-ABFFB66E8FAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

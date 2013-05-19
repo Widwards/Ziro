@@ -8,106 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ZiroDesktopConsoleAgent.ServiceReference1 {
-    using System.Runtime.Serialization;
-    using System;
+namespace TestConsoleViewer.ServiceReference2 {
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ZiroAgentRecord", Namespace="http://schemas.datacontract.org/2004/07/ZiroServerWcfServiceLibrary")]
-    [System.SerializableAttribute()]
-    public partial class ZiroAgentRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CpuUsageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int FreeMemoryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdAgentField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idRecordsField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CpuUsage {
-            get {
-                return this.CpuUsageField;
-            }
-            set {
-                if ((this.CpuUsageField.Equals(value) != true)) {
-                    this.CpuUsageField = value;
-                    this.RaisePropertyChanged("CpuUsage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int FreeMemory {
-            get {
-                return this.FreeMemoryField;
-            }
-            set {
-                if ((this.FreeMemoryField.Equals(value) != true)) {
-                    this.FreeMemoryField = value;
-                    this.RaisePropertyChanged("FreeMemory");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdAgent {
-            get {
-                return this.IdAgentField;
-            }
-            set {
-                if ((this.IdAgentField.Equals(value) != true)) {
-                    this.IdAgentField = value;
-                    this.RaisePropertyChanged("IdAgent");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int idRecords {
-            get {
-                return this.idRecordsField;
-            }
-            set {
-                if ((this.idRecordsField.Equals(value) != true)) {
-                    this.idRecordsField = value;
-                    this.RaisePropertyChanged("idRecords");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://widwards.cloudapp.net", ConfigurationName="ServiceReference1.IZiroService")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://widwards.cloudapp.net", ConfigurationName="ServiceReference2.IZiroService")]
     public interface IZiroService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://widwards.cloudapp.net/IZiroService/GetDefaultOptions", ReplyAction="http://widwards.cloudapp.net/IZiroService/GetDefaultOptionsResponse")]
@@ -141,19 +46,19 @@ namespace ZiroDesktopConsoleAgent.ServiceReference1 {
         System.Threading.Tasks.Task UpdateConsoleAsync(int idAgent, int cpuUsage, int freeMemory);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://widwards.cloudapp.net/IZiroService/GetLastRecords", ReplyAction="http://widwards.cloudapp.net/IZiroService/GetLastRecordsResponse")]
-        ZiroDesktopConsoleAgent.ServiceReference1.ZiroAgentRecord[] GetLastRecords(int numbersOfRecord);
+        ZiroServerWcfServiceLibrary.ZiroAgentRecord[] GetLastRecords(int numbersOfRecord);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://widwards.cloudapp.net/IZiroService/GetLastRecords", ReplyAction="http://widwards.cloudapp.net/IZiroService/GetLastRecordsResponse")]
-        System.Threading.Tasks.Task<ZiroDesktopConsoleAgent.ServiceReference1.ZiroAgentRecord[]> GetLastRecordsAsync(int numbersOfRecord);
+        System.Threading.Tasks.Task<ZiroServerWcfServiceLibrary.ZiroAgentRecord[]> GetLastRecordsAsync(int numbersOfRecord);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IZiroServiceChannel : ZiroDesktopConsoleAgent.ServiceReference1.IZiroService, System.ServiceModel.IClientChannel {
+    public interface IZiroServiceChannel : TestConsoleViewer.ServiceReference2.IZiroService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ZiroServiceClient : System.ServiceModel.ClientBase<ZiroDesktopConsoleAgent.ServiceReference1.IZiroService>, ZiroDesktopConsoleAgent.ServiceReference1.IZiroService {
+    public partial class ZiroServiceClient : System.ServiceModel.ClientBase<TestConsoleViewer.ServiceReference2.IZiroService>, TestConsoleViewer.ServiceReference2.IZiroService {
         
         public ZiroServiceClient() {
         }
@@ -214,11 +119,11 @@ namespace ZiroDesktopConsoleAgent.ServiceReference1 {
             return base.Channel.UpdateConsoleAsync(idAgent, cpuUsage, freeMemory);
         }
         
-        public ZiroDesktopConsoleAgent.ServiceReference1.ZiroAgentRecord[] GetLastRecords(int numbersOfRecord) {
+        public ZiroServerWcfServiceLibrary.ZiroAgentRecord[] GetLastRecords(int numbersOfRecord) {
             return base.Channel.GetLastRecords(numbersOfRecord);
         }
         
-        public System.Threading.Tasks.Task<ZiroDesktopConsoleAgent.ServiceReference1.ZiroAgentRecord[]> GetLastRecordsAsync(int numbersOfRecord) {
+        public System.Threading.Tasks.Task<ZiroServerWcfServiceLibrary.ZiroAgentRecord[]> GetLastRecordsAsync(int numbersOfRecord) {
             return base.Channel.GetLastRecordsAsync(numbersOfRecord);
         }
     }

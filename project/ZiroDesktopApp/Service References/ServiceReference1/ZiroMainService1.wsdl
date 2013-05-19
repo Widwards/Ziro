@@ -4,7 +4,6 @@
     <xsd:schema targetNamespace="http://widwards.cloudapp.net/Imports">
       <xsd:import schemaLocation="http://localhost:8081/ZiroMainService?xsd=xsd0" namespace="http://widwards.cloudapp.net" />
       <xsd:import schemaLocation="http://localhost:8081/ZiroMainService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:8081/ZiroMainService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ZiroServerWcfServiceLibrary" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IZiroService_GetDefaultOptions_InputMessage">
@@ -37,12 +36,6 @@
   <wsdl:message name="IZiroService_UpdateConsole_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateConsoleResponse" />
   </wsdl:message>
-  <wsdl:message name="IZiroService_GetLastRecords_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetLastRecords" />
-  </wsdl:message>
-  <wsdl:message name="IZiroService_GetLastRecords_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetLastRecordsResponse" />
-  </wsdl:message>
   <wsdl:portType name="IZiroService">
     <wsdl:operation name="GetDefaultOptions">
       <wsdl:input wsaw:Action="http://widwards.cloudapp.net/IZiroService/GetDefaultOptions" message="tns:IZiroService_GetDefaultOptions_InputMessage" />
@@ -63,10 +56,6 @@
     <wsdl:operation name="UpdateConsole">
       <wsdl:input wsaw:Action="http://widwards.cloudapp.net/IZiroService/UpdateConsole" message="tns:IZiroService_UpdateConsole_InputMessage" />
       <wsdl:output wsaw:Action="http://widwards.cloudapp.net/IZiroService/UpdateConsoleResponse" message="tns:IZiroService_UpdateConsole_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetLastRecords">
-      <wsdl:input wsaw:Action="http://widwards.cloudapp.net/IZiroService/GetLastRecords" message="tns:IZiroService_GetLastRecords_InputMessage" />
-      <wsdl:output wsaw:Action="http://widwards.cloudapp.net/IZiroService/GetLastRecordsResponse" message="tns:IZiroService_GetLastRecords_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>
